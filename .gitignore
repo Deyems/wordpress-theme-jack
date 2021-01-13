@@ -3,3 +3,5 @@ twentynineteen
 node_modules
 .DS_Store
 themes/udemy/assets/
+fakerpress
+uploads
