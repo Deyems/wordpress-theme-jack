@@ -42,9 +42,7 @@
                             the_post();
                             get_template_part('partials/post/content', 'excerpt');
                 ?>
-                    <!-- <div class="entry clearfix">
-                      <?php the_content() ?>
-                    -->
+                    <?php the_content() ?>
                 <?php
                         }
                     }
@@ -57,10 +55,6 @@
             <div class="row mb-3">
                 <div class="col-12">
                     <?php next_posts_link( '&larr; Older' ); ?>
-                    <!-- <a href="#" class="btn btn-outline-secondary float-left">
-                    </a>
-                    <a href="#" class="btn btn-outline-dark float-right">
-                    </a> -->
                     <?php previous_posts_link( 'Newer &rarr;' ); ?>
                 </div>
             </div>
