@@ -1,24 +1,18 @@
 <?php get_header(); ?>
-    <?php while(have_posts()){ 
-        the_post();    
-    ?>
-        <!-- Page Title ============================================= -->
-        <section id="page-title">
-            <div class="container clearfix">
-                <h1><?php the_title(); ?></h1>
-                <span>
-                    <?php 
-                        if(function_exists('the_subtitle')){
-                            the_subtitle();
-                        }
-                    ?>
-                </span>
-            </div>
-        </section><!-- #page-title end -->
-    <?php
-        }
-        rewind_posts();
-    ?>
+    <!-- Page Title ============================================= -->
+    <section id="page-title">
+        <div class="container clearfix">
+            <h1><?php single_post_title(); ?></h1>
+            <span>
+                <?php 
+                    if(function_exists('the_subtitle')){
+                        the_subtitle();
+                    }
+                ?>
+            </span>
+        </div>
+    </section><!-- #page-title end -->
+    
     <!-- Content ============================================= -->
     <section id="content">
 
