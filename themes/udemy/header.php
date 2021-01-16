@@ -44,31 +44,72 @@
           <!-- Top Social ============================================ -->
           <div id="top-social">
             <ul>
-              <li>
-                <a href="#" class="si-facebook">
-                  <span class="ts-icon"><i class="icon-facebook"></i></span><span class="ts-text">Facebook</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="si-twitter">
-                  <span class="ts-icon"><i class="icon-twitter"></i></span><span class="ts-text">Twitter</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="si-instagram">
-                  <span class="ts-icon"><i class="icon-instagram2"></i></span><span class="ts-text">Instagram</span>
-                </a>
-              </li>
-              <li>
-                <a href="tel:+55.55.5555555" class="si-call">
-                  <span class="ts-icon"><i class="icon-call"></i></span><span class="ts-text">+55.55.5555555</span>
-                </a>
-              </li>
-              <li>
-                <a href="mailto:info@email.com" class="si-email3">
-                  <span class="ts-icon"><i class="icon-email3"></i></span><span class="ts-text">info@email.com</span>
-                </a>
-              </li>
+                <?php 
+                    if(get_theme_mod('ju_facebook_handle')){
+                        ?>
+                        <li>
+                            <a href="https://facebook.com/<?php echo get_theme_mod('ju_facebook_handle'); ?>" class="si-facebook">
+                                <span class="ts-icon">
+                                    <i class="icon-facebook"></i>
+                                </span>
+                                <span class="ts-text"><?php echo get_theme_mod('ju_facebook_handle'); ?></span>
+                            </a>
+                        </li>
+                        <?php
+                    }
+                    if(get_theme_mod('ju_twitter_handle')){
+                        ?>
+                        <li>
+                            <a href="https://twitter.com/<?php echo get_theme_mod('ju_twitter_handle'); ?>" class="si-twitter">
+                                <span class="ts-icon">
+                                    <i class="icon-twitter"></i>
+                                </span>
+                                <span class="ts-text"><?php echo get_theme_mod('ju_twitter_handle'); ?></span>
+                            </a>
+                        </li>
+                        <?php
+                    }
+                    if(get_theme_mod('ju_instagram_handle')){
+                        ?>
+                        <li>
+                            <a href="https://instagram.com/<?php echo get_theme_mod('ju_instagram_handle'); ?>" class="si-instagram">
+                                <span class="ts-icon">
+                                    <i class="icon-instagram2"></i>
+                                </span>
+                                <span class="ts-text"><?php echo get_theme_mod('ju_instagram_handle'); ?></span>
+                            </a>
+                        </li>
+                        <?php
+                    }
+                    if(get_theme_mod('ju_mobile_number')){
+                        ?>
+                        <li>
+                            <a href="https://number.com/<?php echo get_theme_mod('ju_mobile_number'); ?>" class="si-call">
+                                <span class="ts-icon">
+                                    <i class="icon-call"></i>
+                                </span>
+                                <span class="ts-text">
+                                    <?php echo get_theme_mod('ju_mobile_number'); ?>
+                                </span>
+                            </a>
+                        </li>
+                        <?php
+                    }
+                    if(get_theme_mod('ju_email_address')){
+                        ?>
+                        <li>
+                            <a href="https://google.com/<?php echo get_theme_mod('ju_email_address'); ?>" class="si-email3">
+                                <span class="ts-icon">
+                                    <i class="icon-email3"></i>
+                                </span>
+                                <span class="ts-text">
+                                    <?php echo get_theme_mod('ju_email_address'); ?>
+                                </span>
+                            </a>
+                        </li>
+                        <?php
+                    }
+                ?>
             </ul>
           </div><!-- #top-social end -->
 
