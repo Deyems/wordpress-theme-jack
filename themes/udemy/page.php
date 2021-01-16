@@ -22,7 +22,7 @@
 
                 <!-- Post Content ============================================= -->
                 <div class="postcontent nobottommargin clearfix">
-                    <?php //if(have_posts()){
+                    <?php 
                             while(have_posts()){
                                 the_post();
                                 global $post;
@@ -33,8 +33,6 @@
         
                                 <!-- Single Post ============================================= -->
                                 <div class="entry clearfix">
-        
-                                   
         
                                     <!-- Entry Image ============================================= -->
                                     <div class="entry-image">
@@ -71,11 +69,9 @@
                                             comments_template();
                                         }
                                     ?>
-        
                             </div>
                     <?php
-                            }
-                        // }
+                        }
                     ?>
 
                 </div><!-- .postcontent end -->
