@@ -6,3 +6,5 @@
 
 # Plugins Used
 - FakerPress
+- wp-subtitle
+- quick-adsense-reloaded
