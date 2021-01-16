@@ -5,46 +5,43 @@
 
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-  <!-- Stylesheets
-	============================================= -->
+  <!-- Stylesheets ============================================= -->
   <?php wp_head(); ?>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Document Title
-	============================================= -->
-  <title>Index Template</title>
 
 </head>
 
 <body <?php body_class('stretched no-transition');?>>
 
-  <!-- Document Wrapper
-  ============================================= -->
+  <!-- Document Wrapper ============================================= -->
   <div id="wrapper" class="clearfix">
-    <!-- Top Bar
-    ============================================= -->
+    <!-- Top Bar ============================================= -->
     <div id="top-bar" class="dark">
 
       <div class="container clearfix">
 
         <div class="col_half nobottommargin">
 
-          <!-- Top Links
-          ============================================= -->
+          <!-- Top Links ============================================= -->
           <div class="top-links">
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">FAQs</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
+            <?php 
+                if(has_nav_menu( 'secondary' )) {
+                wp_nav_menu([
+                    'theme_location' => 'secondary',
+                    'container' => false,
+                    'fallback_cb' => false,
+                    'depth' => 1,
+                    //'walker' => new JU_Custom_Nav_Walker(),
+                ]);
+                }
+            ?>
           </div><!-- .top-links end -->
 
         </div>
 
         <div class="col_half fright col_last nobottommargin">
 
-          <!-- Top Social
-          ============================================= -->
+          <!-- Top Social ============================================ -->
           <div id="top-social">
             <ul>
               <li>
@@ -81,17 +78,24 @@
 
     </div><!-- #top-bar end -->
 
-    <!-- Header
-    ============================================= -->
+    <!-- Header ============================================= -->
     <header id="header" class="sticky-style-2">
 
       <div class="container clearfix">
 
-        <!-- Logo
-        ============================================= -->
-        <div id="logo">
-          <a href="#" class="standard-logo">Udemy</a>
-        </div><!-- #logo end -->
+        <!-- Logo ============================================= -->
+        <?php 
+        
+        if(has_custom_logo()){
+            the_custom_logo();
+        } else{
+            ?>
+            <div id="logo">
+                <a href="<?php echo home_url('/'); ?>" class="standard-logo">
+                <?php bloginfo('name'); ?>
+                </a>
+            </div><!-- #logo end -->
+        <?php } ?>
 
         <div class="top-advert">
           <img src="images/magazine/ad.jpg">
@@ -101,28 +105,27 @@
 
       <div id="header-wrap">
 
-        <!-- Primary Navigation
-        ============================================= -->
+        <!-- Primary Navigation ============================================= -->
         <nav id="primary-menu" class="style-2">
 
           <div class="container clearfix">
 
             <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
-            <!-- ul Main Menu
-            ======================================== -->
-            <?php if(has_nav_menu( 'primary' )) 
-                    wp_nav_menu([
-                        'theme_location' => 'primary',
-                        'container' => false,
-                        'fallback_cb' => false,
-                        'depth' => 4,
-                        //'walker' => new JU_Custom_Nav_Walker(),
-                    ])
+            <!-- ul Main Menu ======================================== -->
+            <?php 
+                if(has_nav_menu( 'primary' )) {
+                wp_nav_menu([
+                    'theme_location' => 'primary',
+                    'container' => false,
+                    'fallback_cb' => false,
+                    'depth' => 4,
+                    //'walker' => new JU_Custom_Nav_Walker(),
+                ]);
+                }
             ?>
             
-            <!-- Top Cart
-            ============================================= -->
+            <!-- Top Cart ============================================= -->
             <div id="top-cart">
               <a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span>5</span></a>
               <div class="top-cart-content">
@@ -160,8 +163,7 @@
               </div>
             </div><!-- #top-cart end -->
 
-            <!-- Top Search
-            ============================================= -->
+            <!-- Top Search ============================================= -->
             <div id="top-search">
               <a href="#" id="top-search-trigger">
                 <i class="icon-search3"></i><i class="icon-line-cross"></i>
