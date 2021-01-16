@@ -170,6 +170,7 @@
             ?>
             
             <!-- Top Cart ============================================= -->
+            <?php if(get_theme_mod('ju_header_show_cart')){ ?>
             <div id="top-cart">
               <a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span>5</span></a>
               <div class="top-cart-content">
@@ -206,8 +207,10 @@
                 </div>
               </div>
             </div><!-- #top-cart end -->
-
+            <?php } ?>
+            
             <!-- Top Search ============================================= -->
+            <?php if(get_theme_mod('ju_header_show_search')){ ?>
             <div id="top-search">
               <a href="#" id="top-search-trigger">
                 <i class="icon-search3"></i><i class="icon-line-cross"></i>
@@ -216,6 +219,7 @@
                 <input type="text" name="s" class="form-control" placeholder="<?php _e('Type &amp; Hit Enter..')?>" value="<?php the_search_query(); ?>">
               </form>
             </div><!-- #top-search end -->
+            <?php } ?>
 
           </div>
 
