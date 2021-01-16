@@ -32,5 +32,10 @@
     padding: 10px 0;
 }
 
+.ad-image-1{
+    height: 75px;
+    /* width: 50%; */
+}
+
 /* CSS WIDGETS */
 #wp-calendar{ width: 100%; }
