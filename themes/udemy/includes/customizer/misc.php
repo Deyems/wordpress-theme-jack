@@ -18,6 +18,14 @@ function ju_misc_customizer_section($wp_customize){
     $wp_customize->add_setting('ju_footer_tos_page', [
         'default' => 0,
     ]);
+    
+    $wp_customize->add_setting('ju_read_more_color', [
+        'default' => '#1ABC9C',
+    ]);
+    
+    $wp_customize->add_setting('ju_report_file', [
+        'default' => '',
+    ]);
 
     $wp_customize->add_setting('ju_footer_privacy_page', [
         'default' => 0,
@@ -95,4 +103,28 @@ function ju_misc_customizer_section($wp_customize){
             'type' => 'dropdown-pages'
         ]
     ));
+    
+    //Show Privacy page
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control( 
+            $wp_customize, 
+            'ju_read_more_color_input', 
+            [
+                'label'      => __( 'Read more link color', 'udemy' ),
+                'section'    => 'ju_misc_section',
+                'settings'   => 'ju_read_more_color',
+            ] 
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Upload_Control(
+            $wp_customize,
+            'ju_report_file_input',
+            [
+                'label'      => __( 'File Report', 'udemy' ),
+                'section'    => 'ju_misc_section',
+                'settings'   => 'ju_report_file',
+            ] 
+        ) 
+    );
 }
