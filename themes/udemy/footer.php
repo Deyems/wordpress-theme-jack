@@ -12,6 +12,11 @@
               if(get_theme_mod('ju_footer_copyright_text')){
                 echo get_theme_mod('ju_footer_copyright_text');
               }
+              if(get_theme_mod('ju_report_file')){
+            ?>
+              <a href="<?php echo get_theme_mod('ju_report_file'); ?>">Download Report</a>
+            <?php
+              }
             ?>
             <br>
             <div class="copyright-links">
