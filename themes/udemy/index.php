@@ -5,28 +5,38 @@
 
       <div class="content-wrap">
 
-        <div class="section header-stick bottommargin-lg clearfix" style="padding: 20px 0;">
-          <div>
-            <div class="container clearfix">
-              <span class="badge badge-danger bnews-title">Breaking News:</span>
+        <?php
+            if(!is_single() 
+            && is_home() 
+            && function_exists( 'wpp_get_mostpopular' )
+            && get_theme_mod( 'ju_show_header_popular_post' )
+            ){
+                
+                $args = array(
+                    'wpp_start' => '<div class="section header-stick bottommargin-lg clearfix" style="padding: 20px 0;">
+                                        <div>
+                                            <div class="container clearfix">
+                                                <span class="badge badge-danger bnews-title">'. get_theme_mod('ju_popular_posts_widget_title') . '</span>
+                                                    <div class="fslider bnews-slider nobottommargin" data-speed="800" data-pause="6000" data-arrows="false" data-pagi="false">
+                                                        <div class="flexslider">
+                                                            <div class="slider-wrap">',
+                    'wpp_end' =>                    '</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>',
+                    'post_html' => '<div class="slide"><a href="{url}"><strong>{text_title}</strong></a></div>',
+                );
+                
+                wpp_get_mostpopular($args);
 
-              <div class="fslider bnews-slider nobottommargin" data-speed="800" data-pause="6000" data-arrows="false"
-                data-pagi="false">
-                <div class="flexslider">
-                  <div class="slider-wrap">
-                    <div class="slide"><a href="#"><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </strong></a></div>
-                    <div class="slide"><a href="#"><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </strong></a></div>
-                    <div class="slide"><a href="#"><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </strong></a></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        ?>
 
+        <?php
+            }
+        ?>
+    
         <div class="container clearfix">
 
           <!-- Post Content
@@ -42,7 +52,9 @@
                             the_post();
                             get_template_part('partials/post/content', 'excerpt');
                 ?>
-                    <?php the_content() ?>
+                    <?php
+                        // the_content();
+                    ?>
                 <?php
                         }
                     }
