@@ -15,31 +15,18 @@
 // })(jQuery);
 
 (function($){
-    $("#recipe_rating").on('rated', function(){
+    $("#recipe_rating").bind('rated', function(){
         // alert('Touched something here');
         $(this).rateit( 'readonly', true );
-        let form = {
+        var form = {
             action: 'r_rate_recipe',
             rid: $(this).data( 'rid' ),
             rating: $(this).rateit( 'value' )
         }
-        // console.log(form);
+        //  console.log(recipe_obj.ajax_url);
         $.post(recipe_obj.ajax_url, form, function (data){
-            // console.log(data.response);
+            console.log(data);
         });
-        // $.ajax({
-        //     beforeSend: (xhr) => {
-        //         xhr.setRequestHeader('X-WP-Nonce', recipe_obj.nonce)
-        //     },
-        //     type: 'POST',
-        //     data: form,
-        //     url: recipe_obj.ajax_url,
-        //     success: (response) => {
-        //         console.log(response);
-        //     },
-        //     error: (response) => {
-        //         console.log(response);
-        //     },
-        // })
+        
     });
 })(jQuery);
