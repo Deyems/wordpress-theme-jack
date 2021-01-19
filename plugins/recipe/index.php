@@ -20,6 +20,7 @@ if(!function_exists('add_action')) {
 require_once __DIR__ . "/includes/activate.php";
 require_once __DIR__ . "/includes/init.php";
 require_once __DIR__ . '/process/save-post.php';
+require_once __DIR__ . '/process/filter-content.php';
 
 //Hooks
 register_activation_hook( __FILE__, 'r_activate_plugin' );
@@ -27,6 +28,7 @@ add_action( 'init', 'recipe_init');
 
 //Flexible Save Post {Post_type} Hook.
 add_action( 'save_post_recipes', 'r_save_post_admin', 10, 3 );
+add_filter( 'the_content', 'r_filter_recipe_content' );
 
 //Shortcodes
 
