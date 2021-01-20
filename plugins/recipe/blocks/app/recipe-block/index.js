@@ -18,10 +18,21 @@ registerBlockType('udemy/recipe', {
     suppport: {
         html: false,
     },
-    edit: () => {
-        return <p> Hello World</p>
+    edit: (props) => {
+        // console.log(props);
+        return (
+            <div className={props.className}>
+                <ul className="list-unstyled">
+                    <li><strong>{ __('Ingredients', 'recipe')}:</strong>INGREDIENTS_PH</li>
+                    <li><strong>{ __('Cooking Time', 'recipe')}:</strong>COOKING_TIME_PH</li>
+                    <li><strong>{ __('Utensils', 'recipe')}:</strong>UTENSILS_PH</li>
+                    <li><strong>{ __('Cooking Experience', 'recipe')}:</strong>LEVEL_PH</li>
+                    <li><strong>{ __('Meal Type', 'recipe')}:</strong>TYPE_PH</li>
+                </ul>
+            </div>
+        )
     },
-    save: () => {
+    save: (props) => {
         return <p> Hello World</p>
     }
 });
