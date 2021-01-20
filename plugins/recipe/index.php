@@ -23,6 +23,7 @@ require_once __DIR__ . '/process/save-post.php';
 require_once __DIR__ . '/process/filter-content.php';
 require_once __DIR__ . '/includes/front/enqueue-script.php';
 require_once __DIR__ . '/process/rate-recipe.php';
+require_once __DIR__ . '/includes/admin/init.php';
 
 //Hooks
 register_activation_hook( __FILE__, 'r_activate_plugin' );
@@ -34,6 +35,7 @@ add_filter( 'the_content', 'r_filter_recipe_content' );
 add_action( 'wp_enqueue_scripts', 'r_enqueue_scripts', 100 );
 add_action( 'wp_ajax_r_rate_recipe' , 'r_rate_recipe' );
 add_action( 'wp_ajax_nopriv_r_rate_recipe' , 'r_rate_recipe' );
+add_action('admin_init', 'recipe_admin_init');
 
 //Shortcodes
 
