@@ -4,8 +4,9 @@ import "./editor.scss";
 const { registerBlockType } = wp.blocks;
 const { __ } = wp.i18n;
 const { InspectorControls, 
-    BlockControls, 
-    AlignmentToolbar } = wp.blockEditor;
+        BlockControls, 
+        AlignmentToolbar,
+        BlockAlignmentToolbar } = wp.blockEditor;
 const {PanelBody, PanelRow, TextControl, SelectControl } = wp.components;
 
 registerBlockType('udemy/recipe', {
@@ -52,6 +53,15 @@ registerBlockType('udemy/recipe', {
         },
         text_alignment: {
             type: 'string'
+        },
+        block_alignment: {
+            type: 'string',
+            default: 'wide'
+        }
+    },
+    getEditWrapperProps: ({block_alignment}) => {
+        if('left' === block_alignment || 'right' === block_alignment || 'full' === block_alignment  ){
+            return {'data-align': block_alignment};
         }
     },
     edit: (props) => {
@@ -113,6 +123,12 @@ registerBlockType('udemy/recipe', {
             </InspectorControls>,
             <div className={props.className}>
                 <BlockControls>
+                    <BlockAlignmentToolbar 
+                    value = {props.attributes.block_alignment}
+                    onChange = {(new_val) =>{
+                    props.setAttributes({block_alignment: new_val})
+                    }}
+                    />
                     <AlignmentToolbar 
                     value={props.attributes.text_alignment} 
                     onChange={(new_val) => {
@@ -142,7 +158,7 @@ registerBlockType('udemy/recipe', {
     },
     save: (props) => {
         return (
-            <div>
+            <div className={`align${props.attributes.block_alignment}`}>
                 <ul className="list-unstyled" style={{textAlign: props.attributes.text_alignment}}>
                     <li><strong>{ __('Ingredients', 'recipe')}:</strong>
                         <span className="ingredients-ph">{props.attributes.ingredients}</span>
