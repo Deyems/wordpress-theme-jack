@@ -1,9 +1,9 @@
 const { block_icons } = require("../icons/index");
-
+import "./editor.scss";
 // console.log(wp);
 const { registerBlockType } = wp.blocks;
 const { __ } = wp.i18n;
-const { InspectorControls } = wp.editor;
+const { InspectorControls } = wp.blockEditor;
 const {PanelBody, PanelRow, TextControl, SelectControl } = wp.components;
 
 registerBlockType('udemy/recipe', {
