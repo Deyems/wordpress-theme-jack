@@ -128,6 +128,26 @@ registerBlockType('udemy/recipe', {
         ]
     },
     save: (props) => {
-        return <p> Hello World</p>
+        return (
+            <div>
+                <ul className="list-unstyled">
+                    <li><strong>{ __('Ingredients', 'recipe')}:</strong>
+                        <span className="ingredients-ph">{props.attributes.ingredients}</span>
+                    </li>
+                    <li><strong>{ __('Cooking Time', 'recipe')}:</strong>
+                        <span className="cooking-time-ph">{props.attributes.cooking_time}</span>
+                    </li>
+                    <li><strong>{ __('Utensils', 'recipe')}:</strong>
+                        <span className="utensils-ph">{props.attributes.utensils}</span>
+                    </li>
+                    <li><strong>{ __('Cooking Experience', 'recipe')}:</strong>
+                        <span className="cooking-experience-ph">{props.attributes.cooking_experience}</span>
+                    </li>
+                    <li><strong>{ __('Meal Type', 'recipe')}:</strong>
+                        <span className="meal-type-ph">{props.attributes.meal_type}</span>
+                    </li>
+                </ul>
+            </div>
+        )
     }
 });
