@@ -38,6 +38,7 @@ add_action( 'wp_ajax_r_rate_recipe' , 'r_rate_recipe' );
 add_action( 'wp_ajax_nopriv_r_rate_recipe' , 'r_rate_recipe' );
 add_action('admin_init', 'recipe_admin_init');
 add_action ('enqueue_block_editor_assets', 'r_enqueue_block_editor_assets');
+add_action ('enqueue_block_assets', 'r_enqueue_block_assets');
 
 //Shortcodes
 
