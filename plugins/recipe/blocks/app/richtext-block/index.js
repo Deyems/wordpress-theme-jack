@@ -5,11 +5,14 @@ const { __ } = wp.i18n;
 const { RichText } = wp.editor;
 
 registerBlockType( 'udemy/rich-text', {
-    title:                              __( 'Rich Text Example', 'recipe' ),
-    description:                        __( 'Rich text example', 'recipe' ),
-    tags:                        __( 'Rich text, text editor ', 'recipe' ),
-    category:                           'common',
-    icon:                               block_icons.wapuu,
+    title:  __( 'Rich Text Example', 'recipe' ),
+    description: __( 'Rich text example', 'recipe' ),
+    keywords: [
+        __('rich', 'recipe'),
+        __('rich-text', 'recipe')
+    ],
+    category: 'common',
+    icon: block_icons.wapuu,
     attributes: {
         message: {
             type: 'array',
