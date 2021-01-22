@@ -1,14 +1,15 @@
 import {block_icons} from "../icons/index";
 import btn_icon from  "./icon";
 import classnames from 'classnames';
+import "./editor.scss";
 
 const { registerBlockType } = wp.blocks;
 const { __ } = wp.i18n;
 const { BlockControls } = wp.editor;
 const { Toolbar, Button, Tooltip } = wp.components;
 
-registerBlockType('udemy/night-mode-block', {
-    title: __('Click to toggle night mode', 'recipe'),
+registerBlockType('udemy/night-mode', {
+    title: __('Night mode', 'recipe'),
     description: __('Making night and day mode', 'recipe'),
     category: 'common',
     keywords: [
@@ -16,13 +17,17 @@ registerBlockType('udemy/night-mode-block', {
         __('mode switch-mode', 'recipe'),
         __('light-mode', 'recipe'),
     ],
-    icons: block_icons.wapuu,
+    example: {
+        attributes: {
+            night_mode: 'dark OR light',
+        },
+    },
+    icon: block_icons.wapuu,
     attributes: {
         night_mode: {
             type: 'boolean',
-            default: false,
+            default: false
         }
-
     },
     edit: (props) => {
         return (
@@ -31,11 +36,11 @@ registerBlockType('udemy/night-mode-block', {
                     <Toolbar>
                         <Tooltip text={__('Night mode', 'recipe')}>
                             <Button className={ classnames(
-                                'components-icon-button',
+                                'components-icon-buton',
                                 'components-toolbar__control',
-                                {'isactive': props.attributes.night_mode}
+                                { 'is-active': props.attributes.night_mode }
                             )}
-                            onClick={() => {
+                            onClick={ () => {
                                 props.setAttributes({night_mode: !props.attributes.night_mode})
                             }}>
                                 { btn_icon }
