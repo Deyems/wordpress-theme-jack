@@ -5,7 +5,7 @@ import "./editor.scss";
 
 const { registerBlockType } = wp.blocks;
 const { __ } = wp.i18n;
-const { BlockControls, InspectorControls } = wp.editor;
+const { BlockControls, InspectorControls } = wp.blockEditor;;
 const { Toolbar, Button, Tooltip, 
         PanelBody, PanelRow, FormToggle } = wp.components;
 
