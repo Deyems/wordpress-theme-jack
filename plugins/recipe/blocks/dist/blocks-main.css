@@ -8,3 +8,7 @@
   margin: 0;
   padding: 0; }
 
+.wp-block-udemy-night-mode .night {
+  background-color: #080808;
+  color: #e9e8e8; }
+
