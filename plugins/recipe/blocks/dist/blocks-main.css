@@ -12,3 +12,16 @@
   background-color: #080808;
   color: #e9e8e8; }
 
+.wp-block-udemy-media-upload .image-ctr {
+  position: relative; }
+
+.wp-block-udemy-media-upload .btn-remove {
+  background-color: #FF564D;
+  padding: 5px 5px 0;
+  position: absolute;
+  top: 0;
+  left: 0; }
+  .wp-block-udemy-media-upload .btn-remove svg {
+    background: red;
+    fill: white; }
+
