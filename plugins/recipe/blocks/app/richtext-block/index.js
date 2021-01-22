@@ -2,7 +2,7 @@ import {block_icons} from '../icons/index';
 
 const { registerBlockType } = wp.blocks;
 const { __ } = wp.i18n;
-const { RichText } = wp.blockEditor;;
+const { RichText } = wp.blockEditor;
 
 registerBlockType( 'udemy/rich-text', {
     title:  __( 'Rich Text Example', 'recipe' ),
