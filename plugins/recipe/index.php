@@ -32,6 +32,7 @@ require_once __DIR__ . '/includes/widgetsClass/daily-recipe.php';
 require_once __DIR__ . '/includes/cron.php';
 require_once __DIR__ . '/includes/deactivate.php';
 require_once __DIR__ . '/includes/utility.php';
+require_once __DIR__ . '/includes/shortcodes/creator.php';
 
 //Hooks
 register_activation_hook( __FILE__, 'r_activate_plugin' );
@@ -51,3 +52,4 @@ add_action('widgets_init', 'r_widgets_init');
 add_action('r_daily_recipe_hook', 'r_daily_generate_recipe');
 
 //Shortcodes
+add_shortcode( 'recipe-creator', 'r_recipe_creator_shortcode' );
