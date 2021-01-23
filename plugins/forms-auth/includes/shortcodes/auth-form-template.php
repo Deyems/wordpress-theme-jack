@@ -1,4 +1,5 @@
-    <div class="col_one_third nobottommargin">
+NONCE_FIELD_PH
+<div class="col_one_third nobottommargin">
 
         <div class="well well-lg nobottommargin">
             <div id="login-status"></div>
