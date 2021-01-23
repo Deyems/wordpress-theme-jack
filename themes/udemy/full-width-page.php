@@ -54,7 +54,7 @@ get_header(); ?>
                                     <div class="entry-content notopmargin">
         
                                         <!-- Post Single - Content End -->
-                                        <?php the_excerpt();
+                                        <?php the_content();
 
                                             $defaults = array(
                                                 'before' => '<p class="text-center">' . __( 'Pages:', 'udemy' ),
