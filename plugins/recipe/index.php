@@ -29,8 +29,13 @@ require_once __DIR__ . '/blocks/enqueue.php';
 require_once __DIR__ . '/includes/widgets.php';
 // require_once dirname(RECIPE_PLUGIN_URL) . '/includes/widgets.php';
 require_once __DIR__ . '/includes/widgetsClass/daily-recipe.php';
+require_once __DIR__ . '/includes/cron.php';
+require_once __DIR__ . '/includes/deactivate.php';
+require_once __DIR__ . '/includes/utility.php';
+
 //Hooks
 register_activation_hook( __FILE__, 'r_activate_plugin' );
+register_deactivation_hook( __FILE__ , 'r_deactivate_plugin' );
 add_action( 'init', 'recipe_init');
 
 //Flexible Save Post {Post_type} Hook.
@@ -46,4 +51,3 @@ add_action('widgets_init', 'r_widgets_init');
 add_action('r_daily_recipe_hook', 'r_daily_generate_recipe');
 
 //Shortcodes
-
