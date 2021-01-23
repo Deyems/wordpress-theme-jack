@@ -54,7 +54,34 @@ class R_Daily_Recipe_Widget extends WP_Widget{
 	 * @param array $instance
 	 */
 	public function widget( $args, $instance ) {
-        // outputs the content of the widget
-        echo 'recipe of the day';
+        	// outputs the content of the widget
+
+			extract($args);
+			extract($instance);
+			$title = apply_filters('widget_title', $title);
+			
+			echo $before_widget;
+			echo $before_title. $title. $after_title;
+			$recipe_id = get_transient('r_daily_recipe');
+			
+			if(!$recipe_id){
+				$recipe_id = r_get_random_recipe();
+				set_transient('r_daily_recipe', $recipe_id, 'DAY_IN_SECONDS');
+			}
+		?>
+			<div class="portfolio-image">
+				<a href="<?php echo get_permalink($recipe_id); ?>">
+					<?php echo get_the_post_thumbnail($recipe_id, 'thumbnail'); ?>
+				</a>
+			</div>
+			<div class="portfolio-desc center nobottompadding">
+				<h3>
+					<a href="<?php echo get_permalink($recipe_id); ?>">
+						<?php echo get_the_title($recipe_id) ?>
+					</a>
+				</h3>
+			</div>
+		<?php
+			echo $after_widget;
 	}
 }
