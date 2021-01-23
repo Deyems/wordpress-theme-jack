@@ -2,14 +2,29 @@
     //Listen for Submission of LOGIN Form
     $("#login-form").on("submit", function(e){
         e.preventDefault();
-        // let form = {
-        //     username: $("#login-form-username").val(),
-        //     password:  $("#login-form-password").val(),
-        //     action: 'my_register_user'
-        // }
-        // $.post(myrecipe_obj.ajax_url,form, function(data){
-        //     console.log(data);
-        // });
+        $("#login-status").html(`
+            <div class="alert alert-info">Please wait!</div>
+        `);
+        $(this).hide();
+        let form = {
+            _wpnonce: $("#_wpnonce").val(),
+            username: $("#login-form-username").val(),
+            password:  $("#login-form-password").val(),
+            action: 'my_login_user'
+        }
+        $.post(myrecipe_obj.ajax_url,form, function(data){
+            if(data.status == 2){
+                $("#login-status").html(`
+                    <div class="alert alert-success">You are now logged in!</div>
+                `);
+                location.href = myrecipe_obj.home_url;
+            }else{
+                $("#login-status").html(`
+                    <div class="alert alert-danger">Unable to Login.</div>
+                `);
+                $("#login-form").show();
+            }
+        });
 
     });
     
