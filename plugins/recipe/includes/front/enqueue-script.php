@@ -3,7 +3,12 @@
 function r_enqueue_scripts(){
     wp_register_style('r_rateit', 
     plugins_url('/assets/rateit/rateit.css', RECIPE_PLUGIN_URL));
+
+    wp_register_style('ju_bootstrap', 
+    plugins_url('/assets/css/bootstrap.css', RECIPE_PLUGIN_URL));
+
     wp_enqueue_style('r_rateit');
+    wp_enqueue_style('ju_bootstrap');
     
     wp_register_script('r_rate_it', 
     plugins_url('/assets/rateit/jquery.rateit.min.js', RECIPE_PLUGIN_URL),
