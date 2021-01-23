@@ -14,7 +14,8 @@ function my_enqueue_scripts(){
     true);
 
     wp_localize_script('my_main', 'myrecipe_obj', [
-        'ajax_url' => admin_url('admin-ajax.php')
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'home_url' => home_url('/')
     ]);
 
     wp_enqueue_script('my_main');
