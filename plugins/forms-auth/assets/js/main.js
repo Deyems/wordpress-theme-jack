@@ -1,4 +1,3 @@
-// console.log('This means my own created CUSTOM plugin is installed');
 (function ($){
     //Listen for Submission of LOGIN Form
     $("#login-form").on("submit", function(e){
@@ -17,7 +16,6 @@
     //Listen for Submission of REGISTER Form
     $("#register-form").on("submit", function(e){
         e.preventDefault();
-        console.log('Trying to submit form');
         $("#register-status").html(`
             <div class="alert alert-info">Please wait!</div>
         `);
@@ -31,13 +29,12 @@
             repassword:  $("#register-form-repassword").val(),
             action: 'my_register_user'
         }
-        $.post(myrecipe_obj.ajax_url,form).always(function(data){
-            console.log(data);
+        $.post( myrecipe_obj.ajax_url,form ,function(data){
             if(data.status == 2){
                 $("#register-status").html(`
                     <div class="alert alert-success">Account created!</div>
                 `);
-                location.href = '';myrecipe_obj.ajax_url;
+                location.href = myrecipe_obj.home_url;
             }else{
                 $("#register-status").html(`
                     <div class="alert alert-danger">Unable to create account.</div>
@@ -45,6 +42,5 @@
                 $("#register-form").show();
             }
         });
-
     });
 })(jQuery);
