@@ -22,6 +22,7 @@
 
                 <!-- Post Content ============================================= -->
                 <div class="postcontent nobottommargin clearfix">
+                <div>Are we on the Page Template?</div>
                     <?php 
                             while(have_posts()){
                                 the_post();
@@ -49,7 +50,7 @@
                                     <div class="entry-content notopmargin">
         
                                         <!-- Post Single - Content End -->
-                                        <?php the_excerpt();
+                                        <?php the_content();
 
                                             $defaults = array(
                                                 'before' => '<p class="text-center">' . __( 'Pages:', 'udemy' ),
