@@ -17,5 +17,6 @@ function r_activate_plugin(){
     require (ABSPATH. "/wp-admin/includes/upgrade.php");
 
     dbDelta($createSQL);
+    //Activate your Cron Scheduler Hook
     wp_schedule_event(time(), 'daily', 'r_daily_recipe_hook');
 }
