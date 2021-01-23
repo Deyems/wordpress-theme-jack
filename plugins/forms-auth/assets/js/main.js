@@ -1,0 +1,1 @@
+console.log('This means my own created CUSTOM plugin is installed');
