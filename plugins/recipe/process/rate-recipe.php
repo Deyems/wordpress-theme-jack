@@ -36,12 +36,20 @@ function r_rate_recipe(){
     "SELECT AVG(`rating`) FROM `". $table_name. "` 
     WHERE recipe_id='". $postID ."'"
    ), 1);
-    echo "<pre>";
-    print_r($recipe_data);
-    print_r("At Update stage here");
-    echo "</pre>";
+    // echo "<pre>";
+    // print_r($recipe_data);
+    // print_r("At Update stage here");
+    // echo "</pre>";
 
    update_post_meta($postID, 'recipe_data', $recipe_data);
+   
+   //Add actions to allow for other plugins to extend Plugin
+   do_action('recipe_rated', [
+        'post_id' => $postID,
+        'rating' => $rating_count,
+        'user_ip' => $user_IP
+   ]);
+   
    $output['status'] = 2;
    wp_send_json($output);
 }
