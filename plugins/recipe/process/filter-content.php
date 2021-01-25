@@ -9,7 +9,10 @@ function r_filter_recipe_content($content){
     $user_IP = $_SERVER['REMOTE_ADDR'];
 
     $recipe_data = get_post_meta($post->ID, 'recipe_data', true);
-    $recipe_html = file_get_contents('recipe-template.php', true);
+    $recipe_tpl_res = wp_remote_get(
+        plugins_url('process/recipe-template.php', RECIPE_PLUGIN_URL)
+    );
+    $recipe_html = wp_remote_retrieve_body($recipe_tpl_res);
     $recipe_html = str_replace('RATE_I18N:', __("Rating", 'udemy'), $recipe_html );
     $recipe_html = str_replace('RECIPE_ID', $post->ID, $recipe_html );
     $recipe_html = str_replace('RECIPE_RATING', $recipe_data['rating'], $recipe_html );
