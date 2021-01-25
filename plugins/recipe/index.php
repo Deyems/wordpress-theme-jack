@@ -37,6 +37,7 @@ require_once __DIR__ . '/process/submit-user-recipe.php';
 require_once __DIR__ . '/includes/shortcodes/auth-alt-form.php';
 require_once __DIR__ . '/includes/front/logout-link.php';
 require_once __DIR__ . '/includes/admin/dashboard-widgets.php';
+require_once __DIR__ . '/includes/shortcodes/twitter-follow.php';
 
 //Hooks
 register_activation_hook( __FILE__, 'r_activate_plugin' );
@@ -66,3 +67,4 @@ add_action( 'wp_dashboard_setup', 'r_dashboard_widgets' );
 //Shortcodes
 add_shortcode( 'recipe-creator', 'r_recipe_creator_shortcode' );
 add_shortcode ( 'recipe_auth_alt_form', 'r_recipe_auth_alt_form_shortcode' );
+add_shortcode( 'twitter_follow', 'r_twitter_follow_shortcode' );
