@@ -22,4 +22,14 @@ function r_activate_plugin(){
     dbDelta($createSQL);
     //Activate your Cron Scheduler Hook
     wp_schedule_event(time(), 'daily', 'r_daily_recipe_hook');
+
+    $recipe_opts = get_option('r_opts');
+    if(!$recipe_opts){
+        $opts = [
+            'rating_login_required' => 1,
+            'recipe_submission_login_required' => 1
+        ];
+        add_option('r_opts', $opts);
+    }
+
 }
