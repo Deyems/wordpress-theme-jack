@@ -1,7 +1,11 @@
 <?php
 
 function r_recipe_creator_shortcode(){
-    $creatorHTML = file_get_contents('creator-template.php', true);
+    //Converting file_get_contents to wp_remote_get function
+    $creator_tpl_res = wp_remote_get(
+        plugins_url('includes/shortcodes/creator-template.php', RECIPE_PLUGIN_URL)
+    );
+    $creatorHTML = wp_remote_retrieve_body($creator_tpl_res);
     $editorHTML = r_generate_content_editor();
     $creatorHTML = str_replace('CONTENT_EDITOR', $editorHTML, $creatorHTML);
     return $creatorHTML;
