@@ -93,7 +93,7 @@ registerBlockType('udemy/recipe', {
                         onChange={ (new_val) => { 
                             props.setAttributes({utensils: new_val})
                         }} />
-                        <SelectControl 
+                    <SelectControl 
                         label={__('Cooking Experience', 'recipe')}
                         help={__('How skilled should a reader be?', 'recipe')}
                         value={props.attributes.cooking_experience}
@@ -106,7 +106,7 @@ registerBlockType('udemy/recipe', {
                             props.setAttributes({cooking_experience: new_val})
                         }}
                         />
-                        <SelectControl 
+                    <SelectControl 
                         label={__('Meal Type', 'recipe')}
                         help={__('When is this best taken?', 'recipe')}
                         value={props.attributes.meal_type}
