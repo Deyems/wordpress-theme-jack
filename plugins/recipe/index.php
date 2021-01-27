@@ -40,6 +40,7 @@ require_once __DIR__ . '/includes/admin/dashboard-widgets.php';
 require_once __DIR__ . '/includes/shortcodes/twitter-follow.php';
 require_once __DIR__ . '/includes/admin/menus.php';
 require_once __DIR__ . '/includes/admin/options-page.php';
+require_once __DIR__ . '/process/save-options.php';
 
 //Hooks
 register_activation_hook( __FILE__, 'r_activate_plugin' );
