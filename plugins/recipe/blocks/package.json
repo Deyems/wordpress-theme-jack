@@ -21,5 +21,8 @@
     "webpack-cli": "^3.1.2"
   },
   "version": "1.0.0",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@wordpress/api-fetch": "^3.21.2"
+  }
 }
