@@ -38,6 +38,8 @@ require_once __DIR__ . '/includes/shortcodes/auth-alt-form.php';
 require_once __DIR__ . '/includes/front/logout-link.php';
 require_once __DIR__ . '/includes/admin/dashboard-widgets.php';
 require_once __DIR__ . '/includes/shortcodes/twitter-follow.php';
+require_once __DIR__ . '/includes/admin/menus.php';
+require_once __DIR__ . '/includes/admin/options-page.php';
 
 //Hooks
 register_activation_hook( __FILE__, 'r_activate_plugin' );
@@ -63,6 +65,7 @@ add_action('wp_ajax_nopriv_r_submit_user_recipe', 'r_submit_user_recipe');
 add_filter('authenticate', 'r_alt_authenticate', 100, 3);
 add_filter( 'wp_nav_menu_secondary_items', 'ju_new_nav_menu_items', 999 );
 add_action( 'wp_dashboard_setup', 'r_dashboard_widgets' );
+add_action ('admin_menu', 'r_admin_menus');
 
 //Shortcodes
 add_shortcode( 'recipe-creator', 'r_recipe_creator_shortcode' );
