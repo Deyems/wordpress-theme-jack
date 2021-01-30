@@ -22,13 +22,12 @@
     });
 
     featuredFrame.on('select', function(){
-        const attachment = featuredFrame.state().get('selection').first().toJSON();
-        console.log(attachment);
+        let attachment = featuredFrame.state().get('selection').first().toJSON();
         $('#recipe-img-preview').attr('src', attachment.url);
-        $('#r_inputTitle').val(attachment.id);
+        $('#r_inputImgID').val(attachment.id);
     });
 
-    $('#recipe-img-upload-btn').on('click', function (e){
+    $(document).on('click', '#recipe-img-upload-btn', function (e){
         e.preventDefault();
         featuredFrame.open();
     });
@@ -47,7 +46,7 @@
             action: 'r_submit_user_recipe',
             title: $("#r_inputTitle").val(),
             content: tinymce.activeEditor.getContent(),
-            attachment_id: $('#r_inputImgID')
+            attachment_id: $('#r_inputImgID').val()
         }
         $.post(recipe_obj.ajax_url, form, function(data){
             if(data.status == 2){
