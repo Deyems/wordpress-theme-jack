@@ -7,11 +7,11 @@
     CONTENT_EDITOR
     <hr>
     <div class="form-group">
-        <label for="">Featured Image 
+        <label>Featured Image 
             <a href="#" id="recipe-img-upload-btn">Upload</a>
         </label>
         <br>
-        <img src="" alt="" id="recipe-img-preview">
+        <img src="" id="recipe-img-preview">
         <input type="hidden" name="" id="r_inputImgID">
     </div>
     <div class="form-group">
