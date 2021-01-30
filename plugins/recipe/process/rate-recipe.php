@@ -4,6 +4,10 @@ function r_rate_recipe(){
    $table_name = $wpdb->prefix . "recipe_ratings";
 
    $output = ['status' => 1];
+   $recipe_options = get_option('r_opts');
+   if(!is_user_logged_in() && $recipe_options['rating_login_required'] == 2){
+    wp_send_json($output);
+   }
    $postID = absint($_POST['rid']);
    $rating = round($_POST['rating'], 1);
    $user_IP = $_SERVER['REMOTE_ADDR'];
