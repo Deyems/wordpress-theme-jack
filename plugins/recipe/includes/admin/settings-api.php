@@ -51,7 +51,7 @@ function recipe_submission_login_required_input_cb(){
 }
 
 function r_opts_sanitize( $input ){
-    $input['rating_login_required'] = abint($input['rating_login_required']);
+    $input['rating_login_required'] = absint($input['rating_login_required']);
     $input['recipe_submission_login_required'] = absint($input['recipe_submission_login_required']);
     return $input;
 }
