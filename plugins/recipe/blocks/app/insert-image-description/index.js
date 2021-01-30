@@ -48,7 +48,7 @@ registerBlockType( 'udemy/image-description', {
             console.log(datatitle);
             return `<div>${datatitle}<div>`;
         }
-        console.log(getPosts());
+        // console.log(getPosts());
  
             // apiFetch( { url: 'http://localhost/udemy/wp-json/wp/v2/posts?orderby=date&per_page=3', method: 'GET' } )
             // .then( posts => {
