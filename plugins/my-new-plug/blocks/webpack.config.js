@@ -18,5 +18,8 @@ module.exports          =   {
                 use:        'babel-loader',
             }
         ]
-    }
+    },
+    externals: {
+        'lodash': "lodash",
+    },
 };

@@ -35,5 +35,8 @@ module.exports          =   {
     },
     plugins: [
         editor_css_plugin
-    ]
+    ],
+    externals: {
+        'lodash': "lodash",
+    },
 };
