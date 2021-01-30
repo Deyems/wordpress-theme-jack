@@ -35,8 +35,8 @@ function r_plugin_opts_page(){
     <hr>
     <form method="post" action="options.php">
         <?php
-            settings_field( 'r_opts_group' );
-            do_settings_section( 'r_opts_section' );
+            settings_fields( 'r_opts_group' );
+            do_settings_sections( 'r_opts_sections' );
             submit_button();
         ?>
     </form>
