@@ -32,4 +32,15 @@ function r_activate_plugin(){
         add_option('r_opts', $opts);
     }
 
+    global $wp_roles;
+    add_role(
+        'recipe_author',
+        __('Recipe Author', 'recipe'),
+        [
+            'read' => true,
+            'edit_posts' => true,
+            'upload_files' => true,
+        ]
+    );
+
 }
