@@ -4,15 +4,16 @@
 define('JU_DEV_MODE', true);
 
 //Includes
-include (get_theme_file_path('/includes/front/enqueue.php'));
-include (get_theme_file_path('/includes/setup.php'));
-include (get_theme_file_path('includes/custom-nav-walker.php'));
-include (get_theme_file_path('includes/widgets.php'));
-include (get_theme_file_path('includes/theme-customizer.php'));
-include (get_theme_file_path('includes/customizer/social.php'));
-include (get_theme_file_path('includes/customizer/misc.php'));
-include (get_theme_file_path('includes/customizer/enqueue.php'));
-include (get_theme_file_path('includes/buddypress/profile-tabs.php'));
+require_once (get_theme_file_path('/includes/front/enqueue.php'));
+require_once (get_theme_file_path('/includes/setup.php'));
+require_once (get_theme_file_path('includes/custom-nav-walker.php'));
+require_once (get_theme_file_path('includes/widgets.php'));
+require_once (get_theme_file_path('includes/theme-customizer.php'));
+require_once (get_theme_file_path('includes/customizer/social.php'));
+require_once (get_theme_file_path('includes/customizer/misc.php'));
+require_once (get_theme_file_path('includes/customizer/enqueue.php'));
+require_once (get_theme_file_path('includes/buddypress/profile-tabs.php'));
+require_once (get_theme_file_path('includes/utility.php'));
 
 //Hooks
 add_action('wp_enqueue_scripts', 'ju_enqueue');
