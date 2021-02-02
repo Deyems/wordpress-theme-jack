@@ -12,6 +12,7 @@ include (get_theme_file_path('includes/theme-customizer.php'));
 include (get_theme_file_path('includes/customizer/social.php'));
 include (get_theme_file_path('includes/customizer/misc.php'));
 include (get_theme_file_path('includes/customizer/enqueue.php'));
+include (get_theme_file_path('includes/buddypress/profile-tabs.php'));
 
 //Hooks
 add_action('wp_enqueue_scripts', 'ju_enqueue');
