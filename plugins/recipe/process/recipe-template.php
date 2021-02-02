@@ -5,5 +5,6 @@
                 READONLY_PLACEHOLDER data-rateit-value="RECIPE_RATING"
                 data-rateit-resetable="false" data-rid="RECIPE_ID">
             </div>
+            <li><strong>ORIGIN_118N: </strong>ORIGIN_PH_MORE_INFO_URL_PH</li>
     </li>
 </ul>
