@@ -14,6 +14,7 @@ require_once (get_theme_file_path('includes/customizer/misc.php'));
 require_once (get_theme_file_path('includes/customizer/enqueue.php'));
 require_once (get_theme_file_path('includes/buddypress/profile-tabs.php'));
 require_once (get_theme_file_path('includes/utility.php'));
+require_once (get_theme_file_path('includes/buddypress/profile-posts.php'));
 
 //Hooks
 add_action('wp_enqueue_scripts', 'ju_enqueue');
@@ -24,4 +25,5 @@ add_action( 'customize_preview_init' , 'ju_customize_preview_init' );
 
 //Hooks for BuddyPress
 add_action( 'bp_setup_nav', 'ju_buddypress_profile_tabs' );
+
 //Shortcodes
