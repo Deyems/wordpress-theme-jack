@@ -1,6 +1,11 @@
 <?php
 
 function ju_buddypress_profile_tabs(){
+    //Check if plugin is activated
+    if(!ju_plugin_activated_check('recipe/index.php')){
+        return;
+    }
+    
     global $bp;
 
     bp_core_new_nav_item( [
