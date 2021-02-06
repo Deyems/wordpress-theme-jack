@@ -12,3 +12,10 @@ plugins/recipe/assets/extras/
 plugins/buddypress
 plugins/custom-post-type-ui
 plugins/advanced-custom-fields
+plugins/woocommerce
+plugins/woocommerce-services
+plugins/kliken-marketing-for-google
+plugins/mailchimp-for-woocommerce
+plugins/jetpack
+plugins/facebook-for-woocommerce
+plugins/creative-mail-by-constant-contact
